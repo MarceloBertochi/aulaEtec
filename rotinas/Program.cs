@@ -9,19 +9,24 @@ namespace Rotinas
         static void Main(string[] args)
 
         {
-            Program.exibirHoraAtual();
-
-            Console.WriteLine("Digite uma tecla...:");
-            Console.ReadKey(); // somente espera qualquer tecla ser acionada. 
-
-            Program.exibirHoraAtual();
+            ExibirHoraAtual();
+            AguardarUsuario("Digite uma tecla");
+            ExibirHoraAtual();
+            AguardarUsuario("Digite uma outra tecla");
+            ExibirHoraAtual();
         }
 
-        static void exibirHoraAtual() // rotina para exibir a hora atual 
+        void ExibirHoraAtual() // rotina para exibir a hora atual 
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(DateTime.Now.ToLongDateString());
             Console.ResetColor();
+        }
+
+        void AguardarUsuario(string mensagem)
+        {
+            Console.WriteLine(mensagem);
+            Console.ReadKey(); // somente espera qualquer tecla ser acionada.
         }
     }
 }
