@@ -1,12 +1,25 @@
-﻿
+﻿int n = 10;
+n = n +5;
 
-void DizerOi()
+string nomeUsuario;
+
+Console.WriteLine("Digite seu nome");
+nomeUsuario = Console.ReadLine()!;
+
+DizerOi(nomeUsuario);
+Console.WriteLine("hahahahahahaha");
+DizerTchau(nomeUsuario);
+
+void DizerOi(string nome)
 {
-    Console.WriteLine("Oi!");
+    Console.WriteLine($"Oi, {nome}");
 }
 
-void DizerTchau()
+void DizerTchau(string nome)
 {
-        Console.WriteLine("Tchau!");
+        
+       Console.WriteLine($"Tchau, {nome}");
 
 }
+
+// ok
