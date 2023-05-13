@@ -1,25 +1,27 @@
-﻿int n = 10;
-n = n +5;
+﻿using System;
 
-string nomeUsuario;
+namespace Rotinas
 
-Console.WriteLine("Digite seu nome");
-nomeUsuario = Console.ReadLine()!;
-
-DizerOi(nomeUsuario);
-Console.WriteLine("hahahahahahaha");
-DizerTchau(nomeUsuario);
-
-void DizerOi(string nome)
 {
-    Console.WriteLine($"Oi, {nome}");
+    class Program
+
+    {
+        static void Main(string[] args)
+
+        {
+            Program.exibirHoraAtual();
+
+            Console.WriteLine("Digite uma tecla...:");
+            Console.ReadKey(); // somente espera qualquer tecla ser acionada. 
+
+            Program.exibirHoraAtual();
+        }
+
+        static void exibirHoraAtual() // rotina para exibir a hora atual 
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(DateTime.Now.ToLongDateString());
+            Console.ResetColor();
+        }
+    }
 }
-
-void DizerTchau(string nome)
-{
-        
-       Console.WriteLine($"Tchau, {nome}");
-
-}
-
-// okkjkljl
