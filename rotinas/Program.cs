@@ -16,19 +16,22 @@ namespace Rotinas
             //ExibirHoraAtual();
             Console.Clear();
 
-            string nome;
-            Console.Write("Digite seu nome......:");
-            nome = Console.ReadLine();
+            //string nome;
+            //Console.Write("Digite seu nome......:");
+            //nome = Console.ReadLine();
 
-            string sobrenome;
-            Console.Write("Digite seu sobrenome.:");
-            sobrenome = Console.ReadLine();
+            //string sobrenome;
+            //Console.Write("Digite seu sobrenome.:");
+            //sobrenome = Console.ReadLine();
+
+            string nome = LerString("Nome..:");
+            string sobrenome = LerString("Sobrenome..:");
 
             Console.WriteLine();
 
             string nomeCompleto = ObterNomeCompleto(nome, sobrenome);
 
-            Console.WriteLine($"Bem vindo {nomeCompleto}\n!");
+            Console.WriteLine($"Bem vindo {nomeCompleto}\n");
             Console.WriteLine($"Volte sempre {nomeCompleto}");
 
         }
@@ -55,6 +58,13 @@ namespace Rotinas
         static string ObterNomeCompleto(string nome, string sobrenome)
         {
             return $"{nome} {sobrenome}";
+        }
+
+        static string LerString(string mensagem)
+        {
+            Console.Write(mensagem);
+            string ValorDigitado = Console.ReadLine();
+            return ValorDigitado;
         }
     }
 }
