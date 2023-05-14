@@ -9,11 +9,28 @@ namespace Rotinas
         static void Main(string[] args)
 
         {
-            ExibirHoraAtual();
-            AguardarUsuario();
-            ExibirHoraAtual();
-            AguardarUsuario("Digite uma outra tecla");
-            ExibirHoraAtual();
+            //ExibirHoraAtual();
+            //AguardarUsuario();
+            //ExibirHoraAtual();
+            //AguardarUsuario("Digite uma outra tecla");
+            //ExibirHoraAtual();
+            Console.Clear();
+
+            string nome;
+            Console.Write("Digite seu nome......:");
+            nome = Console.ReadLine();
+
+            string sobrenome;
+            Console.Write("Digite seu sobrenome.:");
+            sobrenome = Console.ReadLine();
+
+            Console.WriteLine();
+
+            string nomeCompleto = ObterNomeCompleto(nome, sobrenome);
+
+            Console.WriteLine($"Bem vindo {nomeCompleto}\n!");
+            Console.WriteLine($"Volte sempre {nomeCompleto}");
+
         }
 
         static void ExibirHoraAtual() // rotina para exibir a hora atual 
@@ -30,8 +47,14 @@ namespace Rotinas
         }
 
         static void AguardarUsuario()
+
         {
             AguardarUsuario("Digite uma tecla");
+        }
+
+        static string ObterNomeCompleto(string nome, string sobrenome)
+        {
+            return $"{nome} {sobrenome}";
         }
     }
 }
