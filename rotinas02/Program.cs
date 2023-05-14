@@ -10,16 +10,19 @@ namespace Rotinas02
 
         {
             Console.Clear();
-            double lado1 = 3, lado2 = 4, lado3 = 8;
+            double lado1 = 3, lado2 = 3, lado3 = 3;
 
             if (!ExisteTriangulo(lado1, lado2, lado3))
             {
-Console.WriteLine("Não é triangulo");
+                Console.WriteLine("Não é triangulo");
             }
             else
             {
-Console.WriteLine("É triangulo");
+                // função dizendo que é triangulo
+                string tipo = TipoTriangulo(lado1, lado2, lado3);
+                double area = AreaTriangulo(lado1, lado2, lado3);
 
+                Console.WriteLine($"O triângulo ({lado1}, {lado2}, {lado3}) é {tipo} e possui área de {area:N3}.");
             }
 
             Console.WriteLine();
@@ -39,5 +42,31 @@ Console.WriteLine("É triangulo");
             return trianguloValido;
         }
 
+        static string TipoTriangulo(double a, double b, double c)
+        {
+            if (a == b && b == c)
+            {
+                return "equilátero";
+            }
+            else if (a != b && b != c && c != a)
+            {
+                return "escaleno";
+            }
+            else 
+            {
+                return "isóceles";
+            }
+        }
+
+static double AreaTriangulo(double a, double b, double c)
+{
+    double s = (a + b + c) / 2;
+
+    return Math.Sqrt(s * (s - a)*(s - b)*(s - c));
+}
+
     }
 }
+
+
+        
