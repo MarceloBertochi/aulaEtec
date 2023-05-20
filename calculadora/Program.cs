@@ -1,24 +1,73 @@
-﻿using System;
+﻿string menu = @"
+-=-=- Calculadora -=-=-
+Operações:
++ Adição
+- Subtração
+* Multiplicação
+/ Divisão
+---
+x Sair
+Digite a sua opção: ";
 
-namespace Calculadora
+string opcao;
 
-{ 
-    class Program
+do
+{
+    Console.Clear();
 
+    Console.Write(menu);
+    opcao = Console.ReadLine()!.ToLower().Trim();
+
+    switch (opcao)
     {
-        static void Main(string [] args)
+        case "+":
+            ExecutarAdicao();
+            break;
 
-        {
+        case "-":
+            ExecutarSubtracao();
+            break;
 
-            string menu = @"
+        case "*":
+            ExecutarMultiplicacao();
+            break;
 
-            digitre sair";
+        case "/":
+            ExecutarDivisao();
+            break;
 
+        case "x":
+            Console.WriteLine("Finalizando...");
+            break;
 
-            do
-            Console.Write(menu);
-            
-            
-        }
+        default:
+            Console.WriteLine("Opção inválida.");
+            break;
     }
+
+    Console.Write("Digite uma tecla para continuar...");
+    Console.ReadKey();
+}
+while (opcao != "x");
+
+Console.WriteLine("\nTchau!");
+
+void ExecutarAdicao()
+{
+    Console.WriteLine("Adição");
+}
+
+void ExecutarSubtracao()
+{
+    Console.WriteLine("Subtração");
+}
+
+void ExecutarMultiplicacao()
+{
+    Console.WriteLine("Multiplicação");
+}
+
+void ExecutarDivisao()
+{
+    Console.WriteLine("Divisão");
 }
